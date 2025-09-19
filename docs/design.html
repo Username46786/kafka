@@ -653,6 +653,15 @@
     To enable log cleaning on a particular topic, add the log-specific property
     <pre class="language-text"><code>log.cleanup.policy=compact</code></pre>
 
+ <p>
+Kafka’s <strong>log cleaner</strong> (compaction) is <strong>enabled by default</strong> 
+(since version 0.9.0.1). Topics are compacted when their topic-level 
+<code>cleanup.policy</code> includes <code>compact</code>. The broker configuration 
+<code>log.cleaner.enable</code> controls whether the cleaner process runs, and should 
+normally remain enabled if you use compacted topics.
+</p>
+
+
     The <code>log.cleanup.policy</code> property is a broker configuration setting defined
     in the broker's <code>server.properties</code> file; it affects all of the topics
     in the cluster that do not have a configuration override in place as documented
